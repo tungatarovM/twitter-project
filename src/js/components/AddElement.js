@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import addElement from '../actions/list';
+import { addElement } from '../actions/list';
 
 class AddElement extends React.Component {
     constructor (props) {
@@ -18,12 +18,16 @@ class AddElement extends React.Component {
     }
 
     onSubmit (e) {
-        console.log(this.state.value);
         e.preventDefault();
         // Call action
-        
-        this.props.addElement(this.state.value);
+        const newElement = {
+            name: this.state.value,
+            username: '',
+            email: '',
+        }
+        this.props.addElement(newElement);
     }
+
     render () {
         return (
             <form>

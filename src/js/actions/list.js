@@ -1,11 +1,9 @@
-import ADD_ELEMENT from '../actionTypes/list';
+import { ADD_ELEMENT } from '../actionTypes/list';
 
-
-const addElement = (element) => {
+export const addElement = (newElement) => {
     return {
         type: ADD_ELEMENT,
-        value: element,
+        value: newElement,
     }
 }
 
-export default addElement;
