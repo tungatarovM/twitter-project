@@ -1,11 +1,11 @@
-import testActionType from '../actionTypes/list';
+import ADD_ELEMENT from '../actionTypes/list';
 
 
-const testAction = () => {
+const addElement = (element) => {
     return {
-        type: testActionType,
-        name: 'test'
+        type: ADD_ELEMENT,
+        value: element,
     }
 }
 
-export default testAction;
+export default addElement;

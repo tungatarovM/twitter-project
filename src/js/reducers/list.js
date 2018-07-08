@@ -1,26 +1,17 @@
-import testActionType from '../actionTypes/list';
+import ADD_ELEMENT from '../actionTypes/list';
 
 const initialState = [
-    {
-        name: 'test',
-        id: 1
-    },
-    {
-        name: 'test',
-        id: 2
-    },
-    {
-        name: 'test',
-        id: 3
-    }
+    'value1',
 ]
+localStorage.setItem('elements', initialState);
 
 const ListReducer = (state=initialState, action) => {
     switch(action.type) {
-        case testActionType:
-            return state.map((el) => {
-                return { [el.id]: el.id, [el.name]: `${el.name}success` };
-            })
+        case ADD_ELEMENT:
+            const newState = [ ...state, action.value ];
+            localStorage.setItem('elements', newState);
+            return newState;
+
         default:
             return initialState;
     }

@@ -1,3 +1,2 @@
-const TEST_ACTION = 'TEST_ACTION';
-
-export default TEST_ACTION;
+const ADD_ELEMENT = 'ADD_ELEMENT';
+export default ADD_ELEMENT;
