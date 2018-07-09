@@ -9,16 +9,13 @@ const ListReducer = (state=initialState, action) => {
             const newState = [ ...state, action.value ];
             localStorage.setItem('elements', JSON.stringify(newState));
             return newState;
-        case FETCH_DATA:
-            localStorage.setItem('elements', JSON.stringify(action.value));
-            return [ ...state, ...action.value ]
         case LOAD_LOCAL:
             console.log('local loading');
             return [ ...action.value ];
-        // case 'FIREBASE':
-        //     console.log('logging from firebase');
-        //     localStorage.setItem('elements', JSON.stringify(action.value));
-        //     return [ ...state, ...action.value];
+        case FETCH_DATA:
+            console.log('logging from firebase');
+            localStorage.setItem('elements', JSON.stringify(action.value));
+            return [ ...state, ...action.value];
         default:
             return state;
     }

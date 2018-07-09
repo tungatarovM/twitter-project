@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchElements, loadFromLocalStore } from '../actions/list';
+import { fetchData, loadFromLocalStore } from '../actions/list';
 
 class List extends React.Component {
    
     componentDidMount() {
         if (!localStorage.getItem('elements')) {
-            this.props.fetchElements();
+            this.props.fetchData();
             return;
         }
         this.props.loadFromLocalStore();  
@@ -27,4 +27,4 @@ const mapStateToProps = state => (
         elements: state,
     }
 )
-export default connect(mapStateToProps, { loadFromLocalStore, fetchElements })(List);
+export default connect(mapStateToProps, { loadFromLocalStore, fetchData })(List);
