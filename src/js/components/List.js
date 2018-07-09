@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { fetchElements, loadFromLocalStore } from '../actions/list';
 
 class List extends React.Component {
    
-
+    componentDidMount() {
+        if (!localStorage.getItem('elements')) {
+            this.props.fetchElements();
+            return;
+        }
+        this.props.loadFromLocalStore();  
+    }
     render () {
         return (
             <ul className="list-group">
@@ -21,4 +27,4 @@ const mapStateToProps = state => (
         elements: state,
     }
 )
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps, { loadFromLocalStore, fetchElements })(List);
