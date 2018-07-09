@@ -19,13 +19,16 @@ class AddElement extends React.Component {
 
     onSubmit (e) {
         e.preventDefault();
-        // Call action
         const newElement = {
             name: this.state.value,
             username: '',
             email: '',
         }
+        this.setState({
+            value: '',
+        });
         this.props.addElement(newElement);
+        
     }
 
     render () {
