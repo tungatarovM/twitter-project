@@ -1,20 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CustomRouter from './containers/CustomRouter';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import  thunk  from 'redux-thunk';
-import ListReducer from './reducers/list';
+
+import Application from './containers/Application';
+import Login from './containers/Login';
+import Signup from './containers/Signup';
+import rootReducer from './reducers/rootReducer';
 
 
 const store = createStore(
-    ListReducer,
+    rootReducer,
     applyMiddleware(thunk)
 );
 
 ReactDOM.render(
     <Provider store={store}>
-        <CustomRouter />
+        <Router>
+            <Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/" component={Application} />    
+            </Switch>
+        </Router>
     </Provider>,
     document.getElementById('root')
 );
