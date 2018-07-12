@@ -15,7 +15,7 @@ class List extends React.Component {
         return (
             <ul className="list-group">
                 {this.props.elements.map((el, index) => (
-                    <li className="list-group-item" key={index}>{el.name}</li>
+                    <div className="list-group-item" key={index}><p>{el.name}</p></div>
                 ))}
             </ul>
         )
