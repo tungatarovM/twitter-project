@@ -14,8 +14,8 @@ class List extends React.Component {
     render () {
         return (
             <ul className="list-group">
-                {this.props.elements.map((el, index) => (
-                    <div className="list-group-item" key={index}><p>{el.name}</p></div>
+                {this.props.tweets.map((tweet, index) => (
+                    <div className="list-group-item" key={index}><p>{tweet.name}</p></div>
                 ))}
             </ul>
         )
@@ -24,7 +24,7 @@ class List extends React.Component {
 
 const mapStateToProps = state => (
     {
-        elements: state,
+        tweets: state.tweets,
     }
 )
 export default connect(mapStateToProps, { loadFromLocalStore, fetchData })(List);
