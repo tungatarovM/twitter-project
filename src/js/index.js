@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Application from './containers/Application';
+import CustomRouter from './containers/CustomRouter';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import  thunk  from 'redux-thunk';
@@ -14,7 +14,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <Application />
+        <CustomRouter />
     </Provider>,
     document.getElementById('root')
 );
