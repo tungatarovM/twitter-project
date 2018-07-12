@@ -1,0 +1,25 @@
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-item {
+    padding: 2px;
+}
+.flex-vr-container {
+    display: flex;
+    flex-direction: column;
+}
+.flex-vr-item {
+    margin-top: .5em;
+}
+.text-wrap {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+}
+
+.custom-btn {
+    margin-top: .5em;
+}
