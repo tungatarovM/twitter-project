@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 import { ADD_ELEMENT, FETCH_DATA, LOAD_LOCAL } from '../actionTypes/list';
-import config from '../firebase';
+import { database } from '../firebase';
 
 
 
@@ -11,10 +11,9 @@ export const addElement = (newElement) => {
     }
 }
 
-firebase.initializeApp(config);
 
 export const fetchData = () => dispatch => {
-    firebase.database().ref('elements').once('value')
+    database.once('value')
     .then((snapshot) => {
         const elements = [];
         snapshot.forEach((child) => {
