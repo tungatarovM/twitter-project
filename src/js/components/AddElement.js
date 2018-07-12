@@ -35,7 +35,7 @@ class AddElement extends React.Component {
         return (
             <form>
                 <div className="form-group">
-                    <textarea className="form-control" rows="3" value={this.state.value} onChange={this.onChange}></textarea>
+                    <textarea className="form-control text-justify" maxLength="250" rows="3" value={this.state.value} onChange={this.onChange} ></textarea>
                 </div>
                 <button type="button" className="btn btn-light" onClick={this.onSubmit}>Добавить</button>
             </form>
