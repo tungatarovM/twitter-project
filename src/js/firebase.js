@@ -1,5 +1,7 @@
+import * as firebase from 'firebase';
+
 // Initialize Firebase
-var config = {
+export const config = {
     apiKey: "AIzaSyDx8ol-_zgQoNlHMAIdUTLpQUG85TFw_9Q",
     authDomain: "database-362cb.firebaseapp.com",
     databaseURL: "https://database-362cb.firebaseio.com",
@@ -7,4 +9,9 @@ var config = {
     storageBucket: "database-362cb.appspot.com",
     messagingSenderId: "759304096773"
   };
-export default config;
+
+firebase.initializeApp(config);
+
+export const database = firebase.database().ref('elements');
+
+export const auth = firebase.auth();
